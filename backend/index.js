@@ -11,15 +11,15 @@ app.use(express.json());
 
 //Middleware for handling CORS POLICY
 // Option 1: Allow all origins
-// app.use(cors());
+app.use(cors());
 // Option 2: Allow custom origins
-app.use(
-    cors({
-        origin:'https://bookstore-api-pi.vercel.app',
-        methods:['GET','POST','PUT','DELETE'],
-        allowedHeaders:['Content-Type']
-    })
-)
+// app.use(
+//     cors({
+//         origin:'https://bookstore-api-pi.vercel.app',
+//         methods:['GET','POST','PUT','DELETE'],
+//         allowedHeaders:['Content-Type']
+//     })
+// )
 
 app.get("/",(request,respone)=>{
     console.log(request);
