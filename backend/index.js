@@ -1,5 +1,5 @@
 import express from "express";
-import {PORT,mongoDBUL} from "./config.js";
+import {PORT} from "./config.js";
 import mongoose from "mongoose";
 import bookRouter from "./routes/bookRouter.js";
 import cors from "cors";
@@ -29,7 +29,7 @@ app.use("/books",bookRouter);
 
 
 mongoose
-    .connect(mongoDBUL)
+    .connect(process.env.DATABASE_URI)
     .then(()=>{
         console.log("App connected to MongoDB");
         app.listen(PORT, () => {
