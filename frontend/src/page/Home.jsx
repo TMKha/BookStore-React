@@ -1,10 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Spinner from "../components/spinner";
-import { MdOutlineAddBox, MdOutlineDelete } from "react-icons/md";
+import { MdOutlineAddBox } from "react-icons/md";
 import BookTable from "../components/home/BookTable";
 import BookCar from "../components/home/BookCar";
+import Loading from "../components/Loading";
 
 const Home = () => {
   const [books, setBooks] = useState([]);
@@ -42,7 +42,7 @@ const Home = () => {
           <MdOutlineAddBox className="text-sky-800 text-4xl" />
         </Link>
       </div>
-      {loading ? <Spinner /> : showType=="table" ? (<BookTable books={books} />) : (<BookCar books={books} />)}
+      {loading ? <Loading /> : showType=="table" ? (<BookTable books={books} />) : (<BookCar books={books} />)}
     </div>
   );
 };
