@@ -22,7 +22,7 @@ const CreateBook = () => {
      }
      setLoading(true)
      try {
-        const res = await axios.post('http://localhost:3000/books',data)
+        const res = await axios.post('https://bookstore-api-pi.vercel.app/books',data)
         console.log(res);
         setLoading(false)
          enqueueSnackbar('Book Created Successfully',{variant:'success'})
