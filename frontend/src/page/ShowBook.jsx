@@ -12,7 +12,7 @@ const ShowBook = () => {
 
     const getBookById = async (id) => { 
         try {
-            const res = await axios.get(`http://localhost:3000/books/${id}`)
+            const res = await axios.get(`https://bookstore-api-pi.vercel.app/${id}`)
             console.log(res.data.data);
             setBook(res.data.data)
             setLoading(false)

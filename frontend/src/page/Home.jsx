@@ -16,7 +16,7 @@ const Home = () => {
   }, []);
   const getBooks = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/books");
+      const res = await axios.get("https://bookstore-api-pi.vercel.app/books");
       console.log(res.data.data);
       setBooks(res.data.data);
       setLoading(false);
