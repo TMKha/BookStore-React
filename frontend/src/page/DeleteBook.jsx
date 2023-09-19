@@ -14,7 +14,7 @@ const DeleteBook = () => {
   const handleDeleteBook = async () => {
     setLoading(true)
     try {
-      const res = await axios.delete(`https://bookstore-api-pi.vercel.app/delete/${id}`)
+      const res = await axios.delete(`https://bookstore-api-pi.vercel.app/books/delete/${id}`)
       console.log(res);
       setLoading(false)
       enqueueSnackbar('Book Deleted Successfully',{variant:'success'})
