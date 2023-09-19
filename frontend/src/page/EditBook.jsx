@@ -17,7 +17,7 @@ const EditBook = () => {
   useEffect(() => {
     const getBookById = async (id) => {
       try {
-        const res = await axios.get(`https://bookstore-api-pi.vercel.app/books/edit/${id}`)
+        const res = await axios.get(`https://bookstore-api-pi.vercel.app/books/details/${id}`)
         console.log(res.data.data);
         setTitle(res.data.data.title)
         setAuthor(res.data.data.author)
@@ -42,7 +42,7 @@ const EditBook = () => {
      }
      setLoading(true)
      try {
-      const res = await axios.post(`https://bookstore-api-pi.vercel.app/${id}`,data)
+      const res = await axios.post(`https://bookstore-api-pi.vercel.app/books/edit/${id}`,data)
       console.log(res);
         setLoading(false)
           enqueueSnackbar('Book Updated Successfully',{variant:'success'})
