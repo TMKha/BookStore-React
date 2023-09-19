@@ -17,7 +17,7 @@ const EditBook = () => {
   useEffect(() => {
     const getBookById = async (id) => {
       try {
-        const res = await axios.get(`https://bookstore-api-pi.vercel.app/${id}`)
+        const res = await axios.get(`https://bookstore-api-pi.vercel.app/edit/${id}`)
         console.log(res.data.data);
         setTitle(res.data.data.title)
         setAuthor(res.data.data.author)
