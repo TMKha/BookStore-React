@@ -44,7 +44,7 @@ router.get('/',async (request,respone)=>{
     )
 
 // Route for Get One Book from database by id
-router.get('/:id',async (request,respone)=>{
+router.get('/details/:id',async (request,respone)=>{
     try {
         const {id} = request.params; 
 
@@ -59,7 +59,7 @@ router.get('/:id',async (request,respone)=>{
     }
     )
 // Route for Update a book by id
-router.post('/:id',async (request,respone)=>{
+router.post('/edit/:id',async (request,respone)=>{
     try {
         if(!request.body.title||
             !request.body.author||
@@ -81,7 +81,7 @@ router.post('/:id',async (request,respone)=>{
 })
 
 // Route for Delete a book by id
-router.delete('/:id',async (request,respone)=>{
+router.delete('/delete/:id',async (request,respone)=>{
     try {
         const {id} =request.params;
         
